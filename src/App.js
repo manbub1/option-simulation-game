@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
 import AssetCard from "./components/AssetCard";
-import startBg from "./images/start-bg.png";
 
 const initialAssets = [
   { name: "쩡욱이의 쩡육점", price: 50000, volatility: 0.4, events: ["경제", "심리"] },
@@ -200,7 +199,7 @@ useEffect(() => {
       <div style={{
         textAlign: "center",
         paddingTop: "100px",
-        backgroundImage: `url(${startBg})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/start-bg.png'})`,
         backgroundSize: "cover",
         height: "100vh",
         color: "white"
