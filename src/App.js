@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
 import AssetCard from "./components/AssetCard";
-import newsSound from "./sounds/news.m4a";
 import startBg from "./images/start-bg.png";
 
 const initialAssets = [
@@ -45,7 +44,8 @@ export default function App() {
   const [eventLog, setEventLog] = useState([]);
   const [flash, setFlash] = useState(false);
   const [now, setNow] = useState(new Date());
-  const newsAudio = new Audio(newsSound);
+
+  const newsAudio = new Audio(process.env.PUBLIC_URL + "/sounds/news.m4a");
 
   const handleBuyOption = (asset, quantity, optionPrice, strikePrice) => {
     const totalCost = optionPrice * quantity;
